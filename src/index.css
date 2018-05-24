@@ -1,5 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers|Open+Sans');
+
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-image: url('./Images/CRBackground.png');
+  color: white;
 }
+
+h1{
+  font-size: 3.9em;
+  font-family: 'Bangers', cursive;
+}
+
+.container{
+  margin: 0 auto;
+  max-width: 950px;
+}
+
+.header img{
+  width: 600px;
+}
+
+.header .container{
+  text-align: center;
+}
+
+
+/* MEDIA QUERIES */
+/* small screen: header img: width: 350px */
 
