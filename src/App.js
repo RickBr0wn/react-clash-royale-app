@@ -1,20 +1,44 @@
 import React from 'react'
 
-import api_key from './Components/api-key'
+// Data
+import obj from './Data/api_object'
+
+// Components
+import Header from './Components/Header'
 
 class App extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      api_key: api_key
+      error: null,
+      isLoaded: false,
+      data: []
     }
   }
+
+  componentDidMount() {
+    fetch("https://api.royaleapi.com/player/RYULJJJJ", obj)
+      .then(result => result.json())
+      .then(parsedJSON => {
+          this.setState({
+            isLoaded: true,
+            data: parsedJSON
+          })
+        },
+        error => {
+          this.setState({
+            isLoaded: true,
+            error
+          })
+        }
+      )
+  }
+  
   render() {
-    return (
-      <div>
-        
-      </div>
-    );
+    console.log(this.state.data)
+    return(
+      <Header />
+    )
   }
 }
 
