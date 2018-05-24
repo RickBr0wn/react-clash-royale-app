@@ -10,7 +10,9 @@ const Input = props =>{
           </label>
           <input  name="playerName"
                   value={props.playerNameInput}
-                  onChange={props.handlePlayerNameInput} />
+                  onChange={event => props.handleInput(event, 'playerNameInput')} />
+          <button name="submit"
+                  onClick={props.onSubmit}>TRY</button>
         </form>
       </div>
     </div>

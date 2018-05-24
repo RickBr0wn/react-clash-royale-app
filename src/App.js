@@ -1,4 +1,4 @@
-// https://api.royaleapi.com/player/RYULJJJJ
+// https://api.royaleapi.com/player/#RYULJJJJ
 
 import React from 'react'
 
@@ -21,35 +21,54 @@ class App extends React.Component {
     }
   }
 
-  componentDidMount() {
-    // fetch("https://api.royaleapi.com/top/players?/:cc?", obj)
-    //   .then(result => result.json())
-    //   .then(parsedJSON => {
-    //       this.setState({
-    //         isLoaded: true,
-    //         data: parsedJSON
-    //       })
-    //     },
-    //     error => {
-    //       this.setState({
-    //         isLoaded: true,
-    //         error
-    //       })
-    //     }
-    //   )
+  fetchAPI = playerName => {
+    fetch("https://api.royaleapi.com/player/" + playerName, obj)
+      .then(result => result.json())
+      .then(parsedJSON => {
+          console.log(parsedJSON)
+          this.setState({
+            isLoaded: true,
+            data: parsedJSON
+          })
+        },
+        error => {
+          this.setState({
+            isLoaded: true,
+            error
+          })
+        }
+      )
   }
 
-  handlePlayerNameInput = event =>
-    this.setState({playerNameInput: event.target.value})
+  handleInput = (event, input) =>{
+    this.setState({[input]: event.target.value})
+  }
+
+  handleHashInUserName = name => name.charAt(0) === '#' 
+
+  removeHashFromName = name => name.slice(1)
+
+  onSubmit = event => {
+    event.preventDefault()
+
+    if(this.handleHashInUserName(this.state.playerNameInput)){
+      const newName = this.removeHashFromName(this.state.playerNameInput)
+      this.setState({playerNameInput: newName})
+    }
+
+    const playerNameInput = this.state.playerNameInput
+    console.log(playerNameInput);
+    this.fetchAPI(playerNameInput)
+  }
   
   render() {
-    console.log(this.state.data)
     return(
       <div className="input">
         <Header />
         <Input  data={this.state.data}
                 playerNameInput={this.state.playerNameInput}
-                handlePlayerNameInput={this.handlePlayerNameInput} />
+                handleInput={this.handleInput}
+                onSubmit={this.onSubmit} />
         <Container />
       </div>
     )
