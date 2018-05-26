@@ -53,11 +53,10 @@ class App extends React.Component {
 
     if(this.handleHashInUserName(this.state.playerNameInput)){
       const newName = this.removeHashFromName(this.state.playerNameInput)
-      this.setState({playerNameInput: newName})
+      this.state = {playerNameInput: newName}
     }
 
     const playerNameInput = this.state.playerNameInput
-    console.log(playerNameInput);
     this.fetchAPI(playerNameInput)
   }
   
