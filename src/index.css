@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Open Sans', sans-serif;
-  background-image: url('./Images/CRBackground.png');
+  /* background-image: url('./Images/CRBackground.png'); */
   color: white;
 }
 
@@ -38,14 +38,14 @@ h1{
   border-radius: 5px;
   padding: 60px;
   margin: 0 auto;
-  z-index: 1;
 }
 
 .container-panel{
-  z-index: -1;
   background-color: #ccc;
   border-radius: 5px;
   height: 900px;
+  color: #000;
+  font-size: 18px;
 }
 
 

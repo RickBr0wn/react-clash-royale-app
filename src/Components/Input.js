@@ -6,7 +6,7 @@ const Input = props =>{
       <div className="input-panel">
         <form>
           <label>
-            Please enter your clan tag 
+            Please enter your clan tag ::  #RYULJJJJ ::  
           </label>
           <input  name="playerName"
                   value={props.playerNameInput}

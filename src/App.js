@@ -50,15 +50,11 @@ class App extends React.Component {
 
   onSubmit = event => {
     event.preventDefault()
-
     if(this.handleHashInUserName(this.state.playerNameInput)){
-      const newName = this.removeHashFromName(this.state.playerNameInput)
-      this.setState({playerNameInput: newName})
+      this.fetchAPI(this.removeHashFromName(this.state.playerNameInput))
+    }else{
+      this.fetchAPI(this.state.playerNameInput)
     }
-
-    const playerNameInput = this.state.playerNameInput
-    console.log(playerNameInput);
-    this.fetchAPI(playerNameInput)
   }
   
   render() {
@@ -69,7 +65,7 @@ class App extends React.Component {
                 playerNameInput={this.state.playerNameInput}
                 handleInput={this.handleInput}
                 onSubmit={this.onSubmit} />
-        <Container />
+        <Container data={this.state.data} />
       </div>
     )
   }
