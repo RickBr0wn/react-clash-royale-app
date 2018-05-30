@@ -5,6 +5,7 @@ import Stats from './Stats'
 import CurrentDeck from './CurrentDeck'
 import FreeChestCycle from './FreeChestCycle'
 import ArenaDetails from './ArenaDetails'
+import PlayerAchievements from './PlayerAchievements'
 
 const Container = props =>{
   return(
@@ -14,6 +15,7 @@ const Container = props =>{
         <CurrentDeck data={props.data} />
         <FreeChestCycle data={props.data} />  
         <ArenaDetails data={props.data} /> 
+        <PlayerAchievements data={props.data} />
       </div>
     </div>
   )
