@@ -7,11 +7,15 @@ body {
   background-image: url('./Images/CRBackground.png');
   background-size: cover;
   color: white;
+  font-family: 'Bangers', cursive;
 }
 
 h1{
   font-size: 30px;
-  font-family: 'Bangers', cursive;
+}
+
+h2{
+  font-size: 20px;
 }
 
 .container{
@@ -51,6 +55,11 @@ input{
 
 .submit-button{
   background-color: #FED162;
+}
+
+.current-deck-icon{
+  height: 82px;
+  float: left;
 }
 
 

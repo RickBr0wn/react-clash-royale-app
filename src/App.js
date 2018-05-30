@@ -1,7 +1,4 @@
-// https://api.royaleapi.com/player/#RYULJJJJ
-
 import React from 'react'
-
 
 // Data
 import obj from './Data/api_object'
