@@ -1,4 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers|Open+Sans');
+
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-image: url('./Images/CRBackground.png');
+  background-size: cover;
+  color: white;
+  font-family: 'Bangers', cursive;
 }
+
+h1{
+  font-size: 30px;
+}
+
+h2{
+  font-size: 20px;
+}
+
+.container{
+  margin: 0 auto;
+  max-width: 950px;
+}
+
+/* HEADER */
+.header img{
+  margin-top: 30px;
+  margin-bottom: -30px;
+  width: 300px;
+}
+
+.header .container{
+  text-align: center;
+}
+
+/* INPUT */
+.input .container{
+  text-align: center;
+  
+}
+
+.battle-button{
+  margin-top: 12px;
+  height: 28px;
+}
+
+input{
+  margin-top: -20px;
+}
+
+.container-panel{
+
+}
+
+.submit-button{
+  background-color: #FED162;
+}
+
+.current-deck-icon{
+  height: 82px;
+  float: left;
+}
+
+
