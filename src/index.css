@@ -70,3 +70,7 @@ input{
   margin-left: 70px;
 }
 
+.clear-floats{
+  clear: both;
+}
+
