@@ -16,6 +16,12 @@ h1{
 
 h2{
   font-size: 20px;
+  text-align: left;
+  margin-left: 50px;
+}
+
+li{
+  list-style-type: none;
 }
 
 .container{
@@ -49,10 +55,6 @@ input{
   margin-top: -20px;
 }
 
-.container-panel{
-
-}
-
 .submit-button{
   background-color: #FED162;
 }
@@ -60,6 +62,11 @@ input{
 .current-deck-icon{
   height: 82px;
   float: left;
+  margin-left: 5px;
 }
 
+.player-information{
+  text-align: left;
+  margin-left: 70px;
+}
 
