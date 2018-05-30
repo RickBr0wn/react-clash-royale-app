@@ -8,14 +8,8 @@ const Input = props =>{
     <div className="container">
       <div className="input-row">
         <form>
-          <label>
-            Please enter your clan tag 
-            <br />
-            #RYULJJJJ
-            <br />
-          </label>
-
           <input  name="playerName"
+                  placeholder="Please enter your clan tag"
                   value={props.playerNameInput}
                   onChange={event => props.handleInput(event, 'playerNameInput')} />
           
