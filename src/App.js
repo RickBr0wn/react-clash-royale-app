@@ -2,6 +2,7 @@
 
 import React from 'react'
 
+
 // Data
 import obj from './Data/api_object'
 
@@ -40,6 +41,14 @@ class App extends React.Component {
       )
   }
 
+  // componentDidMount(){
+  //   axios.get({url: 'https://api.royaleapi.com/player/RYULJJJJ', 
+  //               method: 'get',
+  //               headers: {'auth': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTU0LCJpZGVuIjoiMjE4NDgyMDM5MTE0OTU2ODAwIiwibWQiOnt9fQ.2r02XaNgEJmBYjX0DIqer2GRMd_GT3zD_gdplhyjdbc'}})
+  //                 .then(response => this.setState({ data: response.data.data }))
+  //                 .catch(error => console.log('Error fetching and parsing data: ' + error))
+  // }
+
   handleInput = (event, input) =>{
     this.setState({[input]: event.target.value})
   }
@@ -50,27 +59,46 @@ class App extends React.Component {
 
   onSubmit = event => {
     event.preventDefault()
-
-    if(this.handleHashInUserName(this.state.playerNameInput)){
-      const newName = this.removeHashFromName(this.state.playerNameInput)
-      this.state = {playerNameInput: newName}
+    if(this.state.playerNameInput === ''){
+      return alert('Please enter a name')
     }
-
-    const playerNameInput = this.state.playerNameInput
-    this.fetchAPI(playerNameInput)
+    if(this.handleHashInUserName(this.state.playerNameInput)){
+      this.fetchAPI(this.removeHashFromName(this.state.playerNameInput))
+    }else{
+      this.fetchAPI(this.state.playerNameInput)
+    }
   }
   
   render() {
-    return(
-      <div className="input">
-        <Header />
-        <Input  data={this.state.data}
-                playerNameInput={this.state.playerNameInput}
-                handleInput={this.handleInput}
-                onSubmit={this.onSubmit} />
-        <Container />
-      </div>
-    )
+    if(this.state.isLoaded){
+      // true
+      return(
+        <div className="input">
+          <Header />
+          <Input  className="submit-button"
+                  data={this.state.data}
+                  playerNameInput={this.state.playerNameInput}
+                  handleInput={this.handleInput}
+                  onSubmit={this.onSubmit} />
+         <Container data={this.state.data} /> 
+        </div>
+      )
+    }else{
+      // false
+      return(
+        <div className="input">
+          <Header />
+          <Input  className="submit-button"
+                  data={this.state.data}
+                  playerNameInput={this.state.playerNameInput}
+                  handleInput={this.handleInput}
+                  onSubmit={this.onSubmit} />
+        </div>
+      )
+    }
+
+
+    
   }
 }
 

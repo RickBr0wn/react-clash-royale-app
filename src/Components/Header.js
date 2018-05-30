@@ -5,6 +5,7 @@ const Header = () => {
     <div className="header">
       <div className="container">
         <img src={require("../Images/Logo.png")} alt="Clash Royale Logo"/>
+        <h1>PLAYER INFORMATION APP</h1>
       </div>
     </div>
   )
